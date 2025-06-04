@@ -1,6 +1,7 @@
 import flet as ft
 
 from app import app
+from logging_config import logger
 
 """
 при сборке - exe файла
@@ -16,4 +17,4 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("Приложение остановлено")
+        logger.info("Application has stopped.")
