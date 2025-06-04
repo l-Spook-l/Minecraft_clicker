@@ -75,7 +75,7 @@ def app(page: ft.Page) -> None:
     page.add(
         ft.Row(
             [
-                # nav,
+                nav,
                 ft.VerticalDivider(width=1),
                 content_container,  # Контейнер с динамическим контентом
             ],
