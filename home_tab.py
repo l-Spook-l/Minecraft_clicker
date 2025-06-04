@@ -25,10 +25,10 @@ def click_loop():
 def load_home_tab(page: ft.Page):
     settings = load_settings()
 
-    status_text = ft.Text("Статус: Остановлен", size=18)
-    log_text = ft.Text(f"Нажмите {settings.get('start')} — старт\n"
-                       f"Нажмите {settings.get('stop')} — стоп\n"
-                       f"Нажмите {settings.get('exit')} — выход", size=14)
+    status_text = ft.Text("Status: Stopped", size=18)
+    log_text = ft.Text(f"Press  {settings.get('start')} — start\n"
+                       f"Press {settings.get('stop')} — stop\n"
+                       f"Press {settings.get('exit')} — exit", size=14)
 
     def start_clicking(e):
         nonlocal status_text
@@ -37,7 +37,7 @@ def load_home_tab(page: ft.Page):
             clicking = True
             click_thread = threading.Thread(target=click_loop, daemon=True)
             click_thread.start()
-            status_text.value = "Статус: Работает"
+            status_text.value = "Status: Running"
             page.update()
 
     def stop_clicking(e):
@@ -47,7 +47,7 @@ def load_home_tab(page: ft.Page):
             clicking = False
             pyautogui.mouseUp()
             pyautogui.keyUp(settings.get('go'))
-            status_text.value = "Статус: Остановлен"
+            status_text.value = "Status: Stopped"
             page.update()
 
     def exit_program(e):

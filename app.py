@@ -8,7 +8,7 @@ from settings_tab import load_settings_tab
 def app(page: ft.Page) -> None:
     ensure_settings()
 
-    page.title = "Minecraft - копатель"
+    page.title = "MineClicker"
     page.window.width = 450
     page.window.height = 300
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -21,6 +21,7 @@ def app(page: ft.Page) -> None:
     content_container = ft.Container(
         bgcolor=ft.Colors.YELLOW_200,
         padding=10,
+        width=350
     )
 
     # Функция для загрузки контента в зависимости от выбранного пункта меню

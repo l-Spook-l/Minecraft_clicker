@@ -8,7 +8,7 @@ def load_settings_tab(page: ft.Page):
     change_key = True
 
     # Текст, который будет отображать нажатую клавишу
-    key_display = ft.Text("Нажмите кнопку для начала")
+    key_display = ft.Text("Press the button to start")
 
     # Добавляем текстовые поля для каждого действия
     start_key_field = (
@@ -30,7 +30,7 @@ def load_settings_tab(page: ft.Page):
         nonlocal change_key  # Используем состояние переменной change_key
 
         if change_key:
-            key_display.value = "Нажмите любую клавишу"
+            key_display.value = "Press any key"
             page.on_keyboard_event = on_key  # Включаем обработчик клавиш
             change_key = False  # Переключаем режим на "Сохранить"
 
@@ -47,7 +47,7 @@ def load_settings_tab(page: ft.Page):
         else:
             # Сохранение данных в переменную и отображение
             saved_data = key_display.value[-1]
-            key_display.value = f"Данные сохранены: {saved_data}"
+            key_display.value = f"Data saved: {saved_data}"
             page.on_keyboard_event = None  # Отключаем отслеживание клавиш
             change_key = True  # Переключаем режим на "Изменить"
 
@@ -72,7 +72,7 @@ def load_settings_tab(page: ft.Page):
 
     # Обработчик нажатия клавиш
     def on_key(e: ft.KeyboardEvent):
-        key_display.value = f"Нажата клавиша: {e.key}"
+        key_display.value = f"Key pressed: {e.key}"
         page.update()
 
     change_start_key = ft.IconButton(
@@ -95,14 +95,14 @@ def load_settings_tab(page: ft.Page):
     def save_changes():
         save_settings(settings)
 
-        page.open(ft.SnackBar(ft.Text("Настройки сохранены!")))
+        page.open(ft.SnackBar(ft.Text("Settings saved!")))
         page.update()
 
     # Добавляем элементы на страницу
     return ft.Container(
         content=ft.Column(
             [
-                ft.Text("Настройка горячих клавиш", size=20),
+                ft.Text("Hotkey settings", size=20),
                 key_display,
                 ft.Row([
                     ft.Column([
