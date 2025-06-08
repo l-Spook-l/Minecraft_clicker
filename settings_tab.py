@@ -8,7 +8,7 @@ def load_settings_tab(page: ft.Page):
     change_key = True
 
     # Текст, который будет отображать нажатую клавишу
-    key_display = ft.Text("Press the button to start")
+    key_display = ft.Text("Click to change key")
 
     # Добавляем текстовые поля для каждого действия
     start_key_field = (
