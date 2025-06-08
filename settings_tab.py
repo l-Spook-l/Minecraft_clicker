@@ -95,7 +95,10 @@ def load_settings_tab(page: ft.Page):
     def save_changes():
         save_settings(settings)
 
-        page.open(ft.SnackBar(ft.Text("Settings saved!")))
+        page.open(ft.SnackBar(
+            ft.Text("Settings saved. Restart the app to apply changes"),
+            duration=15000)
+        )
         page.update()
 
     # Добавляем элементы на страницу
