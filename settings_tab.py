@@ -10,7 +10,7 @@ def load_settings_tab(page: ft.Page):
     # Текст, который будет отображать нажатую клавишу
     key_display = ft.Text("Click to change key")
 
-    # Добавляем текстовые поля для каждого действия
+    # Текстовые поля для каждого действия
     start_key_field = (
         ft.TextField(label="Start key", value=settings["start"], width=80, text_align=ft.TextAlign.CENTER, max_length=2,
                      read_only=True))

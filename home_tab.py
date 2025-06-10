@@ -25,6 +25,7 @@ def load_home_tab(page: ft.Page):
     settings = load_settings()
 
     status_text = ft.Text("Status: Stopped", size=18)
+    warning_text = ft.Text("Please make sure your keyboard \nlayout is set to English")
     log_text = ft.Text(f"Press   {settings.get('start'):>3}    — start\n"
                        f"Press   {settings.get('stop'):>3}    — stop\n"
                        f"Press {settings.get('exit'):>5}   — exit", size=14)
@@ -65,6 +66,7 @@ def load_home_tab(page: ft.Page):
         content=ft.Column(
             [
                 status_text,
+                warning_text,
                 ft.Divider(),
                 log_text
             ]
