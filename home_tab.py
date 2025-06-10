@@ -5,7 +5,6 @@ import flet as ft
 import pyautogui
 import keyboard
 
-
 from utils import load_settings
 
 
@@ -26,9 +25,9 @@ def load_home_tab(page: ft.Page):
     settings = load_settings()
 
     status_text = ft.Text("Status: Stopped", size=18)
-    log_text = ft.Text(f"Press  {settings.get('start')} — start\n"
-                       f"Press {settings.get('stop')} — stop\n"
-                       f"Press {settings.get('exit')} — exit", size=14)
+    log_text = ft.Text(f"Press   {settings.get('start'):>3}    — start\n"
+                       f"Press   {settings.get('stop'):>3}    — stop\n"
+                       f"Press {settings.get('exit'):>5}   — exit", size=14)
 
     def start_clicking(e):
         nonlocal status_text
@@ -60,7 +59,6 @@ def load_home_tab(page: ft.Page):
     h2 = keyboard.on_press_key(settings.get('stop'), stop_clicking)
     h3 = keyboard.on_press_key(settings.get('exit'), exit_program)
 
-    # Сохраняем хендлы
     keyboard_hooks.extend([h1, h2, h3])
 
     return ft.Container(
