@@ -38,11 +38,11 @@ def load_settings_tab(page: ft.Page):
                 case "start":
                     change_start_key.icon = ft.Icons.CHECK_CIRCLE_OUTLINED
                 case "stop":
-                    change_start_key.icon = ft.Icons.CHECK_CIRCLE_OUTLINED
+                    change_stop_key.icon = ft.Icons.CHECK_CIRCLE_OUTLINED
                 case "exit":
-                    change_start_key.icon = ft.Icons.CHECK_CIRCLE_OUTLINED
+                    change_exit_key.icon = ft.Icons.CHECK_CIRCLE_OUTLINED
                 case "go":
-                    change_start_key.icon = ft.Icons.CHECK_CIRCLE_OUTLINED
+                    change_go_key.icon = ft.Icons.CHECK_CIRCLE_OUTLINED
 
         else:
             # Сохранение данных в переменную и отображение
@@ -56,13 +56,13 @@ def load_settings_tab(page: ft.Page):
                     change_start_key.icon = ft.Icons.CHANGE_CIRCLE
                     start_key_field.value = saved_data
                 case "stop":
-                    change_start_key.icon = ft.Icons.CHANGE_CIRCLE
+                    change_stop_key.icon = ft.Icons.CHANGE_CIRCLE
                     stop_key_field.value = saved_data
                 case "exit":
-                    change_start_key.icon = ft.Icons.CHANGE_CIRCLE
+                    change_exit_key.icon = ft.Icons.CHANGE_CIRCLE
                     exit_key_field.value = saved_data
                 case "go":
-                    change_start_key.icon = ft.Icons.CHANGE_CIRCLE
+                    change_go_key.icon = ft.Icons.CHANGE_CIRCLE
                     go_key_field.value = saved_data
             settings[key] = saved_data
 
